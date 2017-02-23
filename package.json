@@ -1,0 +1,22 @@
+{
+  "name": "sf",
+  "version": "1.0.0",
+  "description": "Microservices for Ditt.io",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dittio/sf.git"
+  },
+  "author": "Blaidddrwg/Metastable/Vikram",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dittio/sf/issues"
+  },
+  "homepage": "https://github.com/dittio/sf#readme",
+  "dependencies": {
+    "seneca": "^3.3.0"
+  }
+}
