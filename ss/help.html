@@ -1,0 +1,23 @@
+<html>
+   <head>
+      <title>Storyboard-Scene Microservices</title>
+   </head>
+   <body>
+      <h1>Welcome to the Storyboard/Scene Microservices</h1>
+      <h3>We currently support the following calls:</h3>
+      <ol>
+         <li>/ - gives this 'help' page</li>
+         <li>/story/list - gives a list of all stories</li>
+         <li>/story/&lt;id&gt; - gives the details of the storyboard with &lt;id&gt;. E.g.:<br><a href="http://localhost:3000/story/1">http://localhost:3000/story/1</a> - to show the details of the first story in our database.</li>
+         <li>/story/add/name/description - adds a story to the database with the given name and description. The URL should be properly escaped - i.e. the spaces should be replaced with '+' etc. E.g.: <br><a href="http://localhost:3000/story/add/Test+Storyboard/This+is+our+first+storyboard">http://localhost:3000/story/add/Test+Storyboard/This+is+our+first+storyboard</a> to add a storyboard.</li>
+         <li>/story/update/id/name/description - updates the story specified by id, with the given name and description. E.g.<br>
+            <a href="http://localhost:3000/story/update/1/First+Storyboard/This+is+our+first+storyboard">http://localhost:3000/story/update/1/First+Storyboard/This+is+our+first+storyboard"</a> updates storyboard 1 with the new name and/or description.</li>
+         <li>/scenes/list/for/story/&lt;id&gt; - gives all the scenes for storyboard with &lt;id&gt;. E.g.:<br>
+            <a href="http://localhost:3000/scenes/list/for/story/1">http://localhost:3000/scenes/list/for/story/1</a> gives a list of all scenes for story 1.</li>
+         <li>/scene/add/&lt;sid&gt;/&lt;name&gt;/&lt;desc&gt; - adds a scene to story &lt;sid&gt;, with specified name and description. E.g.<br>
+            <a href="http://localhost:3000/scene/add/1/First+scene/This+is+a+test+scene+for+our+first+storyboard">http://localhost:3000/scene/add/1/First+scene/This+is+a+test+scene+for+our+first+storyboard</a> adds a scene to the first storyboard.</li>
+         <li>/scene/delete/&lt;id&gt; - deletes scene &lt;id&gt;. E.g. <br><a href="http://localhost:3000/scene/delete/1">http://localhost:3000/scene/delete/1</a> should delete scene 1.</li>
+         <li>/story/delete/&lt;id&gt; - deletes storyboard &lt;id&gt; and <em>all scenes</em> associated with it.</li>
+      </ol>
+   </body>
+</html>
