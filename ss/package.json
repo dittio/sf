@@ -1,0 +1,27 @@
+{
+  "name": "ss",
+  "version": "1.0.0",
+  "description": "Storyboard-Scene Microservices for Ditt.io",
+  "main": "index.js",
+  "scripts": {
+    "start": "micro",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dittio/sf.git"
+  },
+  "author": "Blaidddrwg/Metastable/Vikram",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dittio/sf/issues"
+  },
+  "homepage": "https://github.com/dittio/sf#readme",
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "micro": "latest",
+    "micro-api": "^0.1.6",
+    "node-fetch": "latest",
+    "pg": "^6.1.5"
+  }
+}
