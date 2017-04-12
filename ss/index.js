@@ -15,38 +15,33 @@ const api = microApi([
    },
    {
       method: 'get',
-      path: '/story/add/:name/:desc',
-      handler: handlers.addStoryboard,
-   },
-   {
-      method: 'get',
-      path: '/story/update/:id/:name/:desc',
-      handler: handlers.updateStoryboard,
-   },
-   {
-      method: 'get',
       path: '/story/:id',
       handler: handlers.getStoryboard,
    },
    {
-      method: 'get',
-      path: '/scene/add/:sid/:name/:desc',
-      handler: handlers.addStoryboardScene,
+      method: 'post',
+      path: '/story',
+      handler: handlers.addStoryboard,
+   },
+   {
+      method: 'put',
+      path: '/story/:id',
+      handler: handlers.updateStoryboard,
+   },
+   {
+      method: 'delete',
+      path: '/story/:id',
+      handler: handlers.deleteStoryboard,
    },
    {
       method: 'get',
-      path: '/scenes/list/for/story/:sid',
-      handler: handlers.getStoryboardScenes,
+      path: '/story/add',
+      handler: handlers.showAddStoryForm,
    },
    {
       method: 'get',
-      path: '/scene/delete/:id',
-      handler: handlers.deleteScene,
-   },
-   {
-      method: 'get',
-      path: '/story/delete/:id',
-      handler: handlers.deleteStory,
+      path: '/story/ed/:id',
+      handler: handlers.showStoryboardForm,
    },
 ]);
 
