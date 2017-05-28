@@ -1,23 +1,59 @@
+<!DOCTYPE html>
 <html>
    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1"/>
+      <style>
+         #dl { width:640px; }
+         #dl ol { font-style:italic; font-family:Georgia, Times, serif; font-size:14px; color:#333333;  }
+         #dl ol li { }
+         #dl ol li p { padding:8px; font-style:normal; font-family:Arial; font-size:13px; color:#eee; border-left: 1px solid #999; }
+         #dl ol li p em { display:block; }
+         h1, h2, h3, h4, h5, h6 {
+            font-family:Georgia, "Times New Roman", Times, serif;
+            line-height:1.2;
+         }
+         h1 {
+            font-size:2.0em;
+            margin-bottom:.8em;
+            color:#260026;
+         }
+         h2 {
+            font-size:1.7em;
+            padding-bottom:.2em;
+            border-bottom:1px solid #333;
+            margin-top:1em;
+            margin-bottom:.7em;
+            color:#450045;
+         }
+         h3 {
+            font-size:1.4em;
+            margin-bottom:.7em;
+            color:#830083;
+         }
+      </style> 
       <title>Storyboard-Scene Microservices</title>
    </head>
    <body>
       <h1>Welcome to the Storyboard/Scene Microservices</h1>
-      <h3>We currently support the following calls:</h3>
-      <ol>
-         <li>/ - gives this 'help' page</li>
-         <li>/story/list - gives a list of all stories</li>
-         <li>/story/&lt;id&gt; - gives the details of the storyboard with &lt;id&gt;. E.g.:<br><a href="http://localhost:3000/story/1">http://localhost:3000/story/1</a> - to show the details of the first story in our database.</li>
-         <li>/story/add/name/description - adds a story to the database with the given name and description. The URL should be properly escaped - i.e. the spaces should be replaced with '+' etc. E.g.: <br><a href="http://localhost:3000/story/add/Test+Storyboard/This+is+our+first+storyboard">http://localhost:3000/story/add/Test+Storyboard/This+is+our+first+storyboard</a> to add a storyboard.</li>
-         <li>/story/update/id/name/description - updates the story specified by id, with the given name and description. E.g.<br>
-            <a href="http://localhost:3000/story/update/1/First+Storyboard/This+is+our+first+storyboard">http://localhost:3000/story/update/1/First+Storyboard/This+is+our+first+storyboard"</a> updates storyboard 1 with the new name and/or description.</li>
-         <li>/scenes/list/for/story/&lt;id&gt; - gives all the scenes for storyboard with &lt;id&gt;. E.g.:<br>
-            <a href="http://localhost:3000/scenes/list/for/story/1">http://localhost:3000/scenes/list/for/story/1</a> gives a list of all scenes for story 1.</li>
-         <li>/scene/add/&lt;sid&gt;/&lt;name&gt;/&lt;desc&gt; - adds a scene to story &lt;sid&gt;, with specified name and description. E.g.<br>
-            <a href="http://localhost:3000/scene/add/1/First+scene/This+is+a+test+scene+for+our+first+storyboard">http://localhost:3000/scene/add/1/First+scene/This+is+a+test+scene+for+our+first+storyboard</a> adds a scene to the first storyboard.</li>
-         <li>/scene/delete/&lt;id&gt; - deletes scene &lt;id&gt;. E.g. <br><a href="http://localhost:3000/scene/delete/1">http://localhost:3000/scene/delete/1</a> should delete scene 1.</li>
-         <li>/story/delete/&lt;id&gt; - deletes storyboard &lt;id&gt; and <em>all scenes</em> associated with it.</li>
-      </ol>
+      <h2>The 'storyboard' currently support the following calls:</h2>
+      <div id="dl">
+         <h3>Service Discovery Functions</h3>
+         <ol>
+            <li>/ - gives this 'help' page</li>
+            <li><a href="/story/list">/story/list</a> - gives a list of all stories</li>
+            <li>/story/&lt;id&gt; - gives the details of the storyboard with &lt;id&gt;. E.g.:<br><a href="/story/1">/story/1</a> - to show the details of the first story in our database.</li>
+         </ol>
+         <h3>CRUD Functions</h3>
+         <ol>
+            <li>CREATE - call /story with a request method of "post" (simulated by the form <a href="/story/add">here</a> with a 'name' and 'desc' payload, to add a story to the database with the given name and description.</li>
+            <li>UPDATE - call /story/&lt;id&gt; with a request method of 'put', with a JSON payload with 'name' and 'desc' fields, to update the story specified by id, with the given name and description.</li> 
+            <li>DELETE - call /story/&lt;id&gt; with a request method of 'delete' to delete storyboard &lt;id&gt;, and <em>all scenes.</em> associated with it.</li>
+         </ol>
+         <h3>Test functions</h3>
+         <ol>
+            <li><a href="/story/add">/story/add</a> - this 'get' request (e.g. from the browser navigation bar) shows a form that can be used to simulate a JSON-based REST request to add a new story.</li>
+            <li><a href="/story/ed/1">/story/ed/&lt;id&gt;</a> - this 'get' request (e.g.from the browser navigation bar) shows the story details in a form with an "update" and "delete" button that simulate submitting a JSON based "update" and "delete" request to the story microservice, for tests.
+         </ol>
+      </div>
    </body>
 </html>
