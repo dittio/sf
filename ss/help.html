@@ -41,13 +41,13 @@
          <ol>
             <li>/ - gives this 'help' page</li>
             <li><a href="/story/list">/story/list</a> - gives a list of all stories</li>
-            <li>/story/&lt;id&gt; - gives the details of the storyboard with &lt;id&gt;. E.g.:<br><a href="http://localhost:3000/story/1">http://localhost:3000/story/1</a> - to show the details of the first story in our database.</li>
+            <li>/story/&lt;id&gt; - gives the details of the storyboard with &lt;id&gt;. E.g.:<br><a href="/story/1">/story/1</a> - to show the details of the first story in our database.</li>
          </ol>
          <h3>CRUD Functions</h3>
          <ol>
             <li>CREATE - call /story with a request method of "post" (simulated by the form <a href="/story/add">here</a> with a 'name' and 'desc' payload, to add a story to the database with the given name and description.</li>
-            <li>UPDATE - call /story/id with a request method of 'put', with a JSON payload with 'name' and 'desc' fields, to update the story specified by id, with the given name and description.</li> 
-            <li>DELETE - call /story/id with a requestmethod of 'delete' to delete storyboard &lt;id&gt;, and <em>all scenes.</em> associated with it.</li>
+            <li>UPDATE - call /story/&lt;id&gt; with a request method of 'put', with a JSON payload with 'name' and 'desc' fields, to update the story specified by id, with the given name and description.</li> 
+            <li>DELETE - call /story/&lt;id&gt; with a request method of 'delete' to delete storyboard &lt;id&gt;, and <em>all scenes.</em> associated with it.</li>
          </ol>
          <h3>Test functions</h3>
          <ol>
